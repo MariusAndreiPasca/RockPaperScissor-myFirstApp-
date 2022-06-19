@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html,
+body { 
+    font-size: 16px; 
+    max-height: 100%; 
+}
+
+.banner { 
+    position: relative;
+    display: flex;
+    text-align: center; 
+    margin: 0 auto;
+    justify-content: center;    
+}
+    .navbar { 
+        position: relative; 
+        display: flex; 
+    }
+        h1 { 
+            display: flex; 
+            text-align: center; 
+            font-size: 2rem; 
+            color: rgb(125, 9, 33); }
+
+.scoreboard { 
+    position: relative; 
+    display: flex; 
+    width: 100%; 
+    height: 100%;
+    justify-content: space-around;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 3rem auto;
+
+}
+
+    .player { 
+        color: blueviolet;
+     }
+    .comp {
+        color: cornflowerblue;
+     }
+    .PlayerScore {
+        color: blueviolet;
+     }
+    .compScore { 
+        color: cornflowerblue;
+    }
+    
+.game { 
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+    .PickTable {
+        width: 100%; 
+        display: flex;
+        justify-content: space-around;
+        height: 200px;
+     }
+        .compPick {
+            display: flex;
+            margin: 0 auto;
+            text-align: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            transform: rotate(180deg);
+}
+
+         
+.btn {
+   margin: 0 auto; 
+   width: 80%; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 10rem; 
+}
+.rock {
+    background: transparent;
+    border: none;
+}
+.paper {
+    background: transparent;
+    border: none;
+}
+.scissor {
+    background: transparent;
+    border: none;
+ }
+ 
+ .rock:hover,
+ .paper:hover,
+ .scissor:hover {
+    font-size: 11rem;
+ }
+
+.disabled {
+    filter: grayscale(15);
+    font-size: 9rem;
+}
+
+.defeated {
+    filter: hue-rotate(300deg);
+    font-size: 6rem;
+}
