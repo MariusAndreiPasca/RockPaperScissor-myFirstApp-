@@ -9,10 +9,13 @@ let playerPick = [];
 let myChoices = ['✊', '🖐', '✌'];
 
 
-function compChoice() {
+const compChoice = () => {
+    let finalHand = [];
     let choices = ['✊', '🖐', '✌'];
     let randomChoice = Math.floor(Math.random() * 3);
+    finalHand.push(choices[randomChoice]);
     compPick.textContent = `${choices[randomChoice]}`;
+    return finalHand;
 }
 
 rockBtn.addEventListener("click", () => {
@@ -20,8 +23,8 @@ rockBtn.addEventListener("click", () => {
     paperBtn.classList.add("disabled");
     scissorBtn.classList.add("disabled");
     rockBtn.classList.remove("disabled");
-    compChoice();
-    console.log(playerPick);
+    gameStarts();
+    whoWins();
     playerPick = [];
     
 });
@@ -31,8 +34,8 @@ paperBtn.addEventListener("click", () => {
     rockBtn.classList.add("disabled");
     scissorBtn.classList.add("disabled");
     paperBtn.classList.remove("disabled");
-    compChoice();
-    console.log(playerPick);
+    gameStarts();
+    whoWins();
     playerPick = [];
 })
 
@@ -41,35 +44,40 @@ scissorBtn.addEventListener("click", () => {
     rockBtn.classList.add("disabled");
     paperBtn.classList.add("disabled");
     scissorBtn.classList.remove("disabled");
-    compChoice();
-    console.log(playerPick);
+    gameStarts();
+    whoWins();
     playerPick = [];
 })
 /* game function */
-
+  function gameStarts() {
+    const playerHandPick = playerPick;
+    const compHandPick = compChoice();
+    console.log("You picked: " + playerHandPick);
+    console.log("Comp picked: " + compHandPick);
+  }
 
 /* Who Wins? */
 
-function whoWins(playerPick, compPick) {
-    if (playerPick === compPick) {
+function whoWins(playerHandPick, compHandPick) {
+    if (playerHandPick === compHandPick) {
         return "It's a draw!" 
     }
-    if (playerPick === '✊')  {
-        if (compPick === '🖐') {
+    if (playerHandPick === '✊')  {
+        if (compHandPick === '🖐') {
             console.log("Lose!")
         } else {
             console.log("Win!")
         }
     };
-    if (playerPick === '🖐')  {
-        if (compPick === '✌') {
+    if (playerHandPick === '🖐')  {
+        if (compHandPick === '✌') {
             console.log("Lose!")
         } else {
             console.log("Win!")
         }
     };
-    if (playerPick === '✌')  {
-        if (compPick === '✊') {
+    if (playerHandPick === '✌')  {
+        if (compHandPick === '✊') {
             console.log("Lose!")
         } else {
             console.log("Win!")
