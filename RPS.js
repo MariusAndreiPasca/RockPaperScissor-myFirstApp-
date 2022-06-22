@@ -31,7 +31,8 @@ rockBtn.addEventListener("click", () => {
     whoWins();
     updateScore();
     playerPick = [];
-    bestOfFive()
+    bestOfFive();
+    updateScore()
 });
 
 paperBtn.addEventListener("click", () => {
@@ -43,8 +44,9 @@ paperBtn.addEventListener("click", () => {
     whoWins();
     updateScore();
     playerPick = [];
-    bestOfFive()
-})
+    bestOfFive();
+    updateScore()
+});
 
 scissorBtn.addEventListener("click", () => {
     playerPick.push(myChoices[2]);
@@ -55,8 +57,9 @@ scissorBtn.addEventListener("click", () => {
     whoWins();
     updateScore();
     playerPick = [];
-    bestOfFive()
-})
+    bestOfFive();
+    updateScore()
+});
 /* game function */
   function gameStarts() {
     const playerHandPick = playerPick;
@@ -98,26 +101,24 @@ function updateScore() {
 
 function bestOfFive() {
     if (pScore === 5) {
-     const restart = alert("You lost the best of 5 match!")
+     const restart = confirm("You won the best of 5 match!")
 function restartBtn () {
     if (restart === true) {
-       pScore.value = 0
-       cScore.value = 0
-    }
-    restartBtn()
+       pScore = 0;
+       cScore = 0
+    } 
 }
         
     } else if (cScore === 5) {
-     const restart = alert("You lost the best of 5 match!")
+     const restart = confirm("You lost the best of 5 match!")
         function restartBtn () {
             if (restart === true) {
-                pScore.value = 0
-                cScore.value = 0
-            
+                pScore = 0;
+                cScore = 0
             }
             
         }
-        restartBtn ()
+        restartBtn () 
         
     } else {
         console.log("Go on!")
