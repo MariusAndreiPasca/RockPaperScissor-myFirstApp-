@@ -110,7 +110,3 @@ body {
     font-size: 9rem;
 }
 
-.defeated {
-    filter: hue-rotate(300deg);
-    font-size: 6rem;
-}

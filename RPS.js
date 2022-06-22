@@ -5,10 +5,14 @@ const scissorBtn = document.getElementById('✌')
 const compPick = document.getElementById('compPick')
 const playerScore = document.getElementById('playerScore')
 const compScore = document.getElementById('compScore')
+const endGame = document.getElementById('endGame')
+const scoreboard = document.getElementById('scoreboard')
 let playerPick = [];
 let myChoices = ['✊', '🖐', '✌'];
+var pScore = 0
+var cScore = 0
 
-
+/* comp hand */
 const compChoice = () => {
     let finalHand = [];
     let choices = ['✊', '🖐', '✌'];
@@ -17,7 +21,7 @@ const compChoice = () => {
     compPick.textContent = `${choices[randomChoice]}`;
     return finalHand;
 }
-
+/* player hand */
 rockBtn.addEventListener("click", () => {
     playerPick.push(myChoices[0]);
     paperBtn.classList.add("disabled");
@@ -25,8 +29,9 @@ rockBtn.addEventListener("click", () => {
     rockBtn.classList.remove("disabled");
     gameStarts();
     whoWins();
+    updateScore();
     playerPick = [];
-    
+    bestOfFive()
 });
 
 paperBtn.addEventListener("click", () => {
@@ -36,7 +41,9 @@ paperBtn.addEventListener("click", () => {
     paperBtn.classList.remove("disabled");
     gameStarts();
     whoWins();
+    updateScore();
     playerPick = [];
+    bestOfFive()
 })
 
 scissorBtn.addEventListener("click", () => {
@@ -46,45 +53,73 @@ scissorBtn.addEventListener("click", () => {
     scissorBtn.classList.remove("disabled");
     gameStarts();
     whoWins();
+    updateScore();
     playerPick = [];
+    bestOfFive()
 })
 /* game function */
   function gameStarts() {
     const playerHandPick = playerPick;
     const compHandPick = compChoice();
-    console.log("You picked: " + playerHandPick);
-    console.log("Comp picked: " + compHandPick);
+
   }
 
 /* Who Wins? */
 
 function whoWins(playerHandPick, compHandPick) {
-    if (playerHandPick === compHandPick) {
-        return "It's a draw!" 
+    
+    switch (playerPick + compChoice()) {
+        case '✊✌':
+        case '✌🖐':
+        case '🖐✊':
+        pScore++;
+        break;
+        case '🖐✌':
+        case '✌✊':
+        case '✊🖐':
+        cScore++
+        break;
+        case '✊✊':
+        case '🖐🖐':
+        case '✌✌':
+            
+        break;
     }
-    if (playerHandPick === '✊')  {
-        if (compHandPick === '🖐') {
-            console.log("Lose!")
-        } else {
-            console.log("Win!")
+}
+
+/* update score */
+
+function updateScore() {
+    playerScore.innerHTML = pScore;
+    compScore.innerHTML = cScore;
+}
+
+/* score reset after best of 5 */
+
+function bestOfFive() {
+    if (pScore === 5) {
+     const restart = alert("You lost the best of 5 match!")
+function restartBtn () {
+    if (restart === true) {
+       pScore.value = 0
+       cScore.value = 0
+    }
+    restartBtn()
+}
+        
+    } else if (cScore === 5) {
+     const restart = alert("You lost the best of 5 match!")
+        function restartBtn () {
+            if (restart === true) {
+                pScore.value = 0
+                cScore.value = 0
+            
+            }
+            
         }
-    };
-    if (playerHandPick === '🖐')  {
-        if (compHandPick === '✌') {
-            console.log("Lose!")
-        } else {
-            console.log("Win!")
-        }
-    };
-    if (playerHandPick === '✌')  {
-        if (compHandPick === '✊') {
-            console.log("Lose!")
-        } else {
-            console.log("Win!")
-        }
-    };    
-
-}; 
-
-
-
+        restartBtn ()
+        
+    } else {
+        console.log("Go on!")
+    }
+} 
