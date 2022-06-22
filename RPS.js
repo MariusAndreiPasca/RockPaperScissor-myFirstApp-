@@ -7,6 +7,8 @@ const playerScore = document.getElementById('playerScore')
 const compScore = document.getElementById('compScore')
 const endGame = document.getElementById('endGame')
 const scoreboard = document.getElementById('scoreboard')
+const toggle = document.getElementById('toggle')
+const unfair = document.getElementById('unfair')
 let playerPick = [];
 let myChoices = ['✊', '🖐', '✌'];
 var pScore = 0
@@ -124,3 +126,11 @@ function restartBtn () {
         console.log("Go on!")
     }
 } 
+
+
+unfair.onclick = function() {
+    unfair.classList.toggle('active')
+    toggle.classList.toggle('active')
+    console.log(typeof unfair)
+}
+
