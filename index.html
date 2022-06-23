@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="popup" class="popup">
+        <h2 id="popup_comp">Comp won! Play again?</h2>
+        <h2 id="popup_player">Player won!Play again?</h2>
+        <button id="restartGame" class="restartGame pop">Play Again!</button>
+    </div>
     <header class="banner">
         <div class="navbar">
             <h1>Rock Paper Scissor</h1>
             <div id="toggle" class="toggle">
-                <div id="unfair" class="unfair">⚠</div>
+                <div id="unfair" class="unfair">💀</div>
             </div>
         </div>
     </header>
@@ -34,7 +39,8 @@
             <button id="✊" class="btn rock">✊</button>
             <button id="🖐" class="btn paper">🖐</button>
             <button id="✌" class="btn scissor">✌</button>
-                </div>  
+                </div> 
+        <div id="overlay"></div>         
     </main>        
             
 <script src="RPS.js" defer></script>    
