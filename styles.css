@@ -7,8 +7,62 @@
 
 html,
 body { 
+    position: relative;
     font-size: 16px; 
     max-height: 100%; 
+}
+
+#popup {
+    display: none;
+}
+
+.popup {
+    position: absolute;
+    z-index: 10;
+    width: 300px;
+    height: 150px;
+    background:rgb(125, 9, 33);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.popup #popup_comp {
+    display: block;
+    color: #f3f3f3;
+    margin: 3rem auto;
+}
+
+.popup #popup_player {
+    display: block;
+    color: #f3f3f3;
+    margin: 3rem auto;
+}
+
+.popup .restartGame {
+    color: rgb(125, 9, 33);
+    width: 100%;
+    background-color: #f3f3f3;
+    height: 24px;
+    border: none;
+}
+
+.restartGame:hover {
+    background-color: grey;
+}
+
+#overlay {
+    position: fixed; 
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: all;
 }
 
 .banner { 

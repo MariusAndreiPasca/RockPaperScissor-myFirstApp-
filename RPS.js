@@ -7,12 +7,11 @@ const playerScore = document.getElementById('playerScore')
 const compScore = document.getElementById('compScore')
 const endGame = document.getElementById('endGame')
 const scoreboard = document.getElementById('scoreboard')
-const toggle = document.getElementById('toggle')
-const unfair = document.getElementById('unfair')
+
 let playerPick = [];
 let myChoices = ['✊', '🖐', '✌'];
-var pScore = 0
-var cScore = 0
+let pScore = 0
+let cScore = 0
 
 /* comp hand */
 const compChoice = () => {
@@ -102,35 +101,48 @@ function updateScore() {
 /* score reset after best of 5 */
 
 function bestOfFive() {
-    if (pScore === 5) {
-     const restart = confirm("You won the best of 5 match!")
-function restartBtn () {
-    if (restart === true) {
-       pScore = 0;
-       cScore = 0
-    } 
-}
-        
-    } else if (cScore === 5) {
-     const restart = confirm("You lost the best of 5 match!")
-        function restartBtn () {
-            if (restart === true) {
-                pScore = 0;
-                cScore = 0
-            }
-            
-        }
-        restartBtn () 
-        
-    } else {
-        console.log("Go on!")
-    }
+    
+    const popup = document.getElementById('popup')
+    const restartGame = document.getElementById('restartGame')
+    const messagePlayer = document.getElementById('popup_player')
+    const messageComp = document.getElementById('popup_comp')
+    const overlay = document.getElementById('overlay')
+ if(pScore === 5) {
+    popup.style.display = 'block'
+    messageComp.style.display = 'none'
+    overlay.style.display = 'block'
+
+    restartGame.addEventListener("click", () => {
+        popup.style.display = 'none'
+        messageComp.style.display = 'block'
+        overlay.style.display = 'none'
+        pScore = 0
+        cScore = 0
+        updateScore()
+    })
+ } else if (cScore === 5) {
+    popup.style.display = 'block'
+    messagePlayer.style.display = 'none'
+    overlay.style.display = 'block'
+
+    restartGame.addEventListener("click", () => {
+        popup.style.display = 'none'
+        messagePlayer.style.display = 'block' 
+        overlay.style.display = 'none' 
+        pScore = 0
+        cScore = 0
+        updateScore()
+    })
+ }
 } 
 
+// unfair game mode
+
+const toggle = document.getElementById('toggle')
+const unfair = document.getElementById('unfair')
 
 unfair.onclick = function() {
     unfair.classList.toggle('active')
     toggle.classList.toggle('active')
-    console.log(typeof unfair)
 }
 
