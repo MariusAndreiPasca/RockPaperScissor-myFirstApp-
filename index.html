@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="gameScreen">
+    <img id="danger" class="danger" src="./bio.png" alt="">
     <div id="popup" class="popup">
         <h2 id="popup_comp">Comp won! Play again?</h2>
         <h2 id="popup_player">Player won!Play again?</h2>
+        <h2 id="popup_sure">Are you sure?</h2>
         <button id="restartGame" class="restartGame pop">Play Again!</button>
+        <button id="unfairMode" class="unfair-mode">Yes I Am!!!</button>
     </div>
     <header class="banner">
         <div class="navbar">
             <h1>Rock Paper Scissor</h1>
+            <h4>Danger!!!</h4>
             <div id="toggle" class="toggle">
-                <div id="unfair" class="unfair">💀</div>
+                <input type="checkbox" id="unfair" class="unfair" ></input>
             </div>
         </div>
     </header>
@@ -37,8 +41,8 @@
         </div>
         <div class="PickTable playerTable"> 
             <button id="✊" class="btn rock">✊</button>
-            <button id="🖐" class="btn paper">🖐</button>
-            <button id="✌" class="btn scissor">✌</button>
+            <button id="✋" class="btn paper">✋</button>
+            <button id="✌️" class="btn scissor">✌️</button>
                 </div> 
         <div id="overlay"></div>         
     </main>        
