@@ -1,15 +1,18 @@
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-html,
 body { 
+    width: 100%;
+    overflow: hidden;
     position: relative;
     font-size: 16px; 
     max-height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .danger {
@@ -29,8 +32,8 @@ body {
 .popup {
     position: absolute;
     z-index: 10;
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     background: rgba(0,0,0,1);
     top: 50%;
     left: 50%;
@@ -63,16 +66,18 @@ body {
     color: rgb(125, 9, 33);
     width: 100%;
     background-color: #f3f3f3;
-    height: 24px;
+    padding: 1rem;
     border: none;
+    font-size: 2rem;
 }
 
 .popup .unfair-mode {
     color: rgb(125, 9, 33);
     width: 100%;
     background-color: #f3f3f3;
-    height: 24px;
+    padding: 1rem;
     border: none;
+    font-size: 2rem;
 }
 
 .popup .unfair-mode:checked {
