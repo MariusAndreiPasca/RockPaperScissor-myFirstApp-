@@ -55,9 +55,6 @@ let compChoice = () => {
 /* player hand */
 rockBtn.addEventListener("click", () => {
     playerPick.push(myChoices[0]);
-    paperBtn.classList.add("disabled");
-    scissorBtn.classList.add("disabled");
-    rockBtn.classList.remove("disabled");
     gameStarts();
     whoWins();
     updateScore();
@@ -68,9 +65,6 @@ rockBtn.addEventListener("click", () => {
 
 paperBtn.addEventListener("click", () => {
     playerPick.push(myChoices[1]);
-    rockBtn.classList.add("disabled");
-    scissorBtn.classList.add("disabled");
-    paperBtn.classList.remove("disabled");
     gameStarts();
     whoWins();
     updateScore();
@@ -81,9 +75,6 @@ paperBtn.addEventListener("click", () => {
 
 scissorBtn.addEventListener("click", () => {
     playerPick.push(myChoices[2]);
-    rockBtn.classList.add("disabled");
-    paperBtn.classList.add("disabled");
-    scissorBtn.classList.remove("disabled");
     gameStarts();
     whoWins();
     updateScore();
@@ -137,33 +128,33 @@ function bestOfFive() {
     
     
  if(pScore === 5) {
-    popup.style.display = 'block'
+    popup.style.display = 'flex'
     messageComp.style.display = 'none'
-    overlay.style.display = 'block'
+    overlay.style.display = 'flex'
     unfairMode.style.display = 'none'
     popupSure.style.display = 'none'
-    restartGame.style.display = 'block'
+    restartGame.style.display = 'flex'
 
     restartGame.addEventListener("click", () => {
         popup.style.display = 'none'
-        messageComp.style.display = 'block'
+        messageComp.style.display = 'flex'
         overlay.style.display = 'none'
         pScore = 0
         cScore = 0
         updateScore()
     })
  } else if (cScore === 5) {
-    popup.style.display = 'block'
+    popup.style.display = 'flex'
     messagePlayer.style.display = 'none'
-    overlay.style.display = 'block'
+    overlay.style.display = 'flex'
     unfairMode.style.display = 'none'
     popupSure.style.display = 'none'
-    restartGame.style.display = 'block'
-    messageComp.style.display = 'block'
+    restartGame.style.display = 'flex'
+    messageComp.style.display = 'flex'
 
     restartGame.addEventListener("click", () => {
         popup.style.display = 'none'
-        messagePlayer.style.display = 'block' 
+        messagePlayer.style.display = 'flex' 
         overlay.style.display = 'none' 
         pScore = 0
         cScore = 0
@@ -177,25 +168,27 @@ function bestOfFive() {
 
 unfair.addEventListener("click", () => {
     if(unfair.checked == true) {
-        popup.style.display = 'block'
-        overlay.style.display = 'block'
+        popup.style.display = 'flex'
+        overlay.style.display = 'flex'
         messageComp.style.display = 'none'
         messagePlayer.style.display = 'none'
         restartGame.style.display = 'none'
-        popupSure.style.display = 'block'
-        unfairMode.style.display = 'block'
+        popupSure.style.display = 'flex'
+        unfairMode.style.display = 'flex'
     } else {
-        gameScreen.style.background = 'white'
+        gameScreen.style.background = '#F2BC1B'
         danger.style.display = 'none'
-        
+        pScore = 0
+        cScore = 0
+        updateScore()
     };
 
     unfairMode.addEventListener("click", () => {
         popup.style.display = 'none'
-        messagePlayer.style.display = 'block' 
+        messagePlayer.style.display = 'flex' 
         overlay.style.display = 'none'
         gameScreen.style.background = 'red'
-        danger.style.display = 'block'
+        danger.style.display = 'flex'
         pScore = 0
         cScore = 0
         updateScore()

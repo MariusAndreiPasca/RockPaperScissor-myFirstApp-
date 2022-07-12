@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body id="gameScreen">
     <img id="danger" class="danger" src="./bio.png" alt="">
@@ -16,33 +16,27 @@
         <button id="restartGame" class="restartGame pop">Play Again!</button>
         <button id="unfairMode" class="unfair-mode">Yes I Am!!!</button>
     </div>
-    <header class="banner">
         <div class="navbar">
             <h1>Rock Paper Scissor</h1>
-            <h4>Danger!!!</h4>
             <div id="toggle" class="toggle">
                 <input type="checkbox" id="unfair" class="unfair" ></input>
             </div>
         </div>
-    </header>
         <div id="scoreboard" class="scoreboard">
             <div class="player">Player</div>
-            <div id="playerScore" class="PlayerScore">     
-            </div>
+            <div id="playerScore" class="PlayerScore">0</div>
             <div class="to">:</div>
-            <div class="comp">Comp</div>            
-            <div  id="compScore" class="compScore">
-            
+            <div  id="compScore" class="compScore">0</div>
+            <div class="comp">Comp</div>         
             </div>
         </div>
     <main class="game">
-        <div class="PickTable compTable">
-            <span id="compPick" class="compPick btn notYet"></span>
-        </div>
-        <div class="PickTable playerTable"> 
+        <div class="playerTable"> 
             <button id="✊" class="btn rock">✊</button>
             <button id="✋" class="btn paper">✋</button>
             <button id="✌️" class="btn scissor">✌️</button>
+            <img src="./vs.svg" alt="versus">
+            <span id="compPick" class="compPick btn notYet"></span>
                 </div> 
         <div id="overlay"></div>         
     </main>        
